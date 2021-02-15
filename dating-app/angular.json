@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dating-app"
+    }
+  },
+  "defaultProject": "dating-app",
+  "cli": {
+    "analytics": "652f4d1c-01f7-4842-9b46-4ef3490ef074"
+  }
 }
