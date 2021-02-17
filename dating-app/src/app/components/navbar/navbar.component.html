@@ -29,8 +29,8 @@
                 </div>
               </div>
               <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" *ngIf="(accountService.currentUser$ | async) === null">
-                <input id="username-field" [(ngModel)]="model.username" name="username" class="form-control me-2" type="search" placeholder="Userame">
-                <input id="password-field" [(ngModel)]="model.password" name="password" class="form-control me-2" type="search" placeholder="Password">
+                <input id="username-field" [(ngModel)]="model.username" name="username" class="form-control me-2" type="text" placeholder="Userame">
+                <input id="password-field" [(ngModel)]="model.password" name="password" class="form-control me-2" type="password" placeholder="Password">
                 <button class="btn btn-outline-success" type="submit">Login</button>
               </form>
             </div>
