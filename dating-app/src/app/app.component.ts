@@ -12,17 +12,10 @@ export class AppComponent implements OnInit {
   title = 'dating-app';
   users: User[];
 
-  constructor(private userService: UserService, private accountService: AccountService){}
+  constructor(private accountService: AccountService){}
 
   ngOnInit(): void{
-    this.getUsers();
     this.setCurrentUser();
-  }
-
-  getUsers(){
-    this.userService.getAll().subscribe(data => {
-      this.users = data;
-    })
   }
 
   setCurrentUser(){
