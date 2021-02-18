@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
     <div class="container">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Dating App</a>
+            <a class="navbar-brand my-auto" href="#">Dating App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,10 +28,10 @@
                   <a class="dropdown-item" (click)="logout()" style="cursor: pointer;">Logout</a>
                 </div>
               </div>
-              <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" *ngIf="(accountService.currentUser$ | async) === null">
-                <input id="username-field" [(ngModel)]="model.username" name="username" class="form-control me-2" type="text" placeholder="Userame">
-                <input id="password-field" [(ngModel)]="model.password" name="password" class="form-control me-2" type="password" placeholder="Password">
-                <button class="btn btn-outline-success" type="submit">Login</button>
+              <form class="d-flex justify-content-start ms-5" #loginForm="ngForm"  (ngSubmit)="login()" autocomplete="off" *ngIf="(accountService.currentUser$ | async) === null">
+                <input id="username-field" [(ngModel)]="model.username" name="username" class="form-control m-2" type="text" placeholder="Userame">
+                <input id="password-field" [(ngModel)]="model.password" name="password" class="form-control m-2" type="password" placeholder="Password">
+                <button class="btn btn-outline-success m-2" id="login-button" type="submit" style="padding: 1%, 0.5%;">Login</button>
               </form>
             </div>
           </div>
