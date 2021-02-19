@@ -17,7 +17,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   login(model: any) {
-   return this.http.post(`${environment.apiUrl}/Account/login`, model)
+   return this.http.post(`${environment.apiUrl}/account/login`, model)
             .pipe(
               map((response: User) =>
               {
@@ -32,7 +32,7 @@ export class AccountService {
   }
 
   register(model: any){
-    return this.http.post(`${environment.apiUrl}/Account/register`, model)
+    return this.http.post(`${environment.apiUrl}/account/register`, model)
             .pipe(
               map((user: User) =>
                 {
