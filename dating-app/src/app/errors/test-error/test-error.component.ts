@@ -16,19 +16,38 @@ export class TestErrorComponent implements OnInit {
 
   get404Error(){
     this.http.get(`${environment.apiUrl}/error/not-found`)
-      .subscribe(response => console.log(response), error => console.log(error));
+      .subscribe(response => 
+        {
+          console.log(response);
+        }, error => 
+        {
+          console.log(error);
+        });
+        
       
   }
 
   get400ValidationError(){
     this.http.post(`${environment.apiUrl}/account/register`, {})
-      .subscribe(response => console.log(response), error => console.log(error));
+      .subscribe(response =>
+        { 
+        console.log(response);
+        }, error => 
+        {
+          console.log(error);
+        });
       
   }
 
   get400Error(){
     this.http.get(`${environment.apiUrl}/error/bad-request`)
-      .subscribe(response => console.log(response), error => console.log(error));
+      .subscribe(response => 
+        {
+        console.log(response)
+        }, error => 
+        {
+          console.log(error)
+        });
   }
 
   get500Error(){
