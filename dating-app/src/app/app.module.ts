@@ -15,7 +15,10 @@ import { ListsComponent } from './components/lists/lists.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import {SharedModule} from './modules/shared.module';
 import { TestErrorComponent } from './errors/test-error/test-error.component'
-import {ErrorInterceptor} from './interceptors/error.interceptor'
+import {ErrorInterceptor} from './interceptors/error.interceptor';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { MemberCardComponent } from './components/members/member-card/member-card.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import {ErrorInterceptor} from './interceptors/error.interceptor'
     MemberDetailComponent,
     ListsComponent,
     MessagesComponent,
-    TestErrorComponent
+    TestErrorComponent,
+    NotFoundComponent,
+    ServerErrorComponent,
+    MemberCardComponent
   ],
   imports: [
     BrowserModule,

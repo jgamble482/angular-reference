@@ -26,8 +26,6 @@ export class NavbarComponent implements OnInit {
       {
       console.log(response);
       this.router.navigateByUrl('/');
-      }, error => {
-        this.toastrService.error(error.error);
       });
   }
 

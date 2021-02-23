@@ -1,0 +1,5 @@
+<div class="container mx-auto">
+    <h1 class="mx-auto">Not Found</h1>
+    <button class="btn btn-primary mx-auto" routerLink="/">Return to homepage</button>
+    <button *ngIf="(accountService.currentUser$ | async)" class="btn btn-secondary mx-auto" routerLink="/members">Return to members page</button>
+</div>

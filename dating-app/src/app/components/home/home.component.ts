@@ -16,18 +16,12 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.getUsers();
   }
 
   registerModeToggle(){
     this.registerMode = !this.registerMode;
   }
 
-  getUsers(){
-    this.userService.getAll().subscribe(users => {
-      this.users = users;
-    });
-  }
 
   cancelRegisterMode(event: boolean){
     this.registerMode = event;
