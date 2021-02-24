@@ -18,6 +18,6 @@ export class MemberService {
   }
 
   getMember(username: string){
-    return this.http.get<Member[]>(`${environment.apiUrl}/user/${username}`);
+    return this.http.get<Member>(`${environment.apiUrl}/user/${username}`);
   }
 }
