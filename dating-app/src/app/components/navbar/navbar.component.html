@@ -23,7 +23,7 @@
               <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" style="margin: 5px;" dropdown>
                 <a class="dropdown-toggle text-light" dropdownToggle style="cursor: pointer;">Welcome {{user.username | titlecase}}</a>
                 <div class="dropdown-menu mt-3" *dropdownMenu>
-                  <a class="dropdown-item" style="cursor: pointer;">Edit Profile</a>
+                  <a class="dropdown-item" routerLink="/member/edit" style="cursor: pointer;">Edit Profile</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" (click)="logout()" style="cursor: pointer;">Logout</a>
                 </div>
