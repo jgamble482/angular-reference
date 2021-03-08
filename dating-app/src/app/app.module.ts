@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MemberListComponent } from './components/members/member-list/member-list.component';
@@ -23,6 +23,7 @@ import {JwtInterceptor} from './interceptors/jwt.interceptor';
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
 import {LoadingInterceptor} from './interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
+import { TextInputComponent } from './forms/text-input/text-input.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PhotoEditorComponent } from './components/members/photo-editor/photo-ed
     ServerErrorComponent,
     MemberCardComponent,
     MemberEditComponent,
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { PhotoEditorComponent } from './components/members/photo-editor/photo-ed
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
 
   ],
   providers: [
