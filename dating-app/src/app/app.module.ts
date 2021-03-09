@@ -24,6 +24,7 @@ import { MemberEditComponent } from './components/members/member-edit/member-edi
 import {LoadingInterceptor} from './interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
 import { TextInputComponent } from './forms/text-input/text-input.component';
+import { DateInputComponent } from './forms/date-input/date-input.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { TextInputComponent } from './forms/text-input/text-input.component';
     MemberCardComponent,
     MemberEditComponent,
     PhotoEditorComponent,
-    TextInputComponent
+    TextInputComponent,
+    DateInputComponent
   ],
   imports: [
     BrowserModule,
