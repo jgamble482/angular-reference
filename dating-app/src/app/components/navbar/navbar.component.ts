@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
     this.accountService.login(this.model).subscribe(response => 
       {
       console.log(response);
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/members');
       });
   }
 
