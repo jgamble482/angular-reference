@@ -1,9 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import {of} from 'rxjs';
 import { environment } from 'src/environments/environment';
 import {Member} from '../models/member';
+import {PaginationResult} from '../models/pagination';
+import {UserParams} from '../models/userParams';
 
 
 
@@ -13,15 +15,40 @@ import {Member} from '../models/member';
 })
 export class MemberService {
   members: Member[] = [];
+  
 
   constructor(private http: HttpClient) { }
 
-  getAll(){
-    if(this.members.length > 0) return of(this.members);
-    return this.http.get<Member[]>(`${environment.apiUrl}/user`).pipe(map(members =>{
-      this.members = members;
-      return this.members
-    }));
+  getMembers(userParams: UserParams){
+    let params = this.getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
+
+    params = params.append('minAge', userParams.minAge.toString());
+    params = params.append('maxAge', userParams.maxAge.toString());
+    params = params.append('gender', userParams.gender);
+
+    return this.getPaginatedResult<Member[]>(params)
+  }
+
+  private getPaginatedResult<T>(params: HttpParams) {
+    const paginatedResult: PaginationResult<T> = new PaginationResult<T>();
+    return this.http.get<T>(`${environment.apiUrl}/user`, { observe: "response", params }).pipe(
+      map(respone => {
+        paginatedResult.content = respone.body;
+        if (respone.headers.get("Pagination") !== null) {
+          paginatedResult.pagination = JSON.parse(respone.headers.get("Pagination"));
+        }
+        return paginatedResult;
+      })
+    );
+  }
+
+  private getPaginationHeaders(pageNumber: number, pageSize: number): HttpParams{
+    let params = new HttpParams();
+    params = params.append('pageNumber', `${pageNumber}`);
+    params = params.append('pageSize', `${pageSize}`);
+
+    return params
+    
   }
 
   getMember(username: string){
