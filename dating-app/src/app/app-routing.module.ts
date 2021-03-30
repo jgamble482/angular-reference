@@ -11,13 +11,14 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import {AuthGuard} from './guards/auth.guard';
 import {PreventUnsavedChangesGuard} from './guards/prevent-unsaved-changes.guard';
+import {MemberDetailResolver} from './resolvers/member-detailed.resolver'
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path: '', runGuardsAndResolvers: 'always', canActivate: [AuthGuard], children:
 [
   {path:'members', component: MemberListComponent},
-  {path:'members/:username', component: MemberDetailComponent},
+  {path:'members/:username', component: MemberDetailComponent, resolve: {member: MemberDetailResolver}},
   {path:'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
   {path:'lists', component: ListsComponent},
   {path:'messages', component: MessagesComponent}

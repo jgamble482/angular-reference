@@ -14,8 +14,8 @@ export class MemberDetailResolver implements Resolve<Member>{
 
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Member | Observable<Member> | Promise<Member> {
-        throw new Error('Method not implemented.');
+    resolve(route: ActivatedRouteSnapshot): Observable<Member> {
+       return this.memberService.getMember(route.paramMap.get('username'));
     }
 
 }

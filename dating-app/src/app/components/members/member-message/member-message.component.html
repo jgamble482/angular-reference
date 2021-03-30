@@ -24,7 +24,7 @@
         </ul>
     </div>
     <div class="card-footer">
-        <form>
+        <form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
             <div class="input-group">
                 <input type="text" class="form-control input-sm" placeholder="Send a dm">
                 <div class="input-group-append">
