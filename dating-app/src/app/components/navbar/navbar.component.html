@@ -13,6 +13,9 @@
                     <a class="nav-link" routerLink='/messages' routerLinkActive='active'>Messages</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" routerLink='/admin' routerLinkActive='active'>Admin</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" *ngIf="accountService.currentUser$ | async" (click)="logout()">Logout</a>
                   </li>
                 </ng-container>
