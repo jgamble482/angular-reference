@@ -48,7 +48,6 @@ export class UserManagementComponent implements OnInit {
   private getRolesArray(user){
     const roles = [];
     const userRoles = user.roles;
-    console.log ('User Roles: ', userRoles);
     const availableRoles: any[] = [
       {name: 'Admin', value: 'Admin'},
       {name: 'Moderator', value: 'Moderator'},
@@ -69,14 +68,14 @@ export class UserManagementComponent implements OnInit {
         }
       }
     });
-    console.log("Roles to return: ", roles);
+    
     let result = [];
     roles.forEach(item => {
       if(result.indexOf(item) < 0){
         result.push(item);
       }
     })
-    console.log("Result: ", result);
+    
     return result;
   }
     
