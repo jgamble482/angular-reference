@@ -62,21 +62,17 @@ export class UserManagementComponent implements OnInit {
           roles.push(role);
           break;
         }
+      }
         if(!isMatch){
           role.checked = false;
           roles.push(role);
         }
-      }
+      
     });
     
-    let result = [];
-    roles.forEach(item => {
-      if(result.indexOf(item) < 0){
-        result.push(item);
-      }
-    })
+
     
-    return result;
+    return roles;
   }
     
 }
